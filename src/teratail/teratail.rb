@@ -1,6 +1,6 @@
-require './service/question_service.rb'
-require './service/tag_service.rb'
-require './service/user_service.rb'
+require './src/teratail/service/question_service.rb'
+require './src/teratail/service/tag_service.rb'
+require './src/teratail/service/user_service.rb'
 
 class Teratail
   def initialize(access_token)
