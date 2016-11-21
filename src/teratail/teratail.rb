@@ -4,20 +4,20 @@ require './service/user_service.rb'
 
 class Teratail
   def initialize(access_token)
-    @questionService = QuestionService.new(access_token)
-    @tagService = TagService.new(access_token)
-    @userService = UserService.new(access_token)
+    @question_service = QuestionService.new(access_token)
+    @tag_service = TagService.new(access_token)
+    @user_service = UserService.new(access_token)
   end
 
   def question
-    @questionService
+    @question_service
   end
 
   def tag
-    @tagService
+    @tag_service
   end
 
   def user
-    @userService
+    @user_service
   end
 end
