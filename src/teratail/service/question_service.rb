@@ -6,7 +6,7 @@ class QuestionService
 
   def initialize(accessToken)
     @accessToken=accessToken
-    @config=YAML.load_file("./../config.yml")
+    @config=YAML.load_file("./config.yml")
   end
 
 end
