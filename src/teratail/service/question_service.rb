@@ -9,4 +9,16 @@ class QuestionService
     @access_token = access_token
     @config = YAML.load_file('./config.yml')
   end
+
+  def find_all(page = 1, limit = 20)
+    path = "#{@config['teratail']['host']}questions#{make_request_parameter(page, limit)}"
+    response = RestClient.get(path, make_request_header(@access_token))
+    JSON.parse response.to_s
+  end
+
+  def find_one(question_id)
+    path = "#{@config['teratail']['host']}questions/#{question_id}"
+    response = RestClient.get(path, make_request_header(@access_token))
+    JSON.parse response.to_s
+  end
 end
