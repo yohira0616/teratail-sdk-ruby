@@ -4,6 +4,7 @@ require 'yaml'
 require './common/api_client_helper.rb'
 
 class TagService
+  include ApiClientHelper
 
   def initialize(accessToken)
     @accessToken=accessToken
@@ -11,7 +12,7 @@ class TagService
   end
 
   def find_all(page=20,limit=1)
-    response = RestClient.get @config["teratail"]["host"]+'tags'+ ApiClientHelper.make_request_parameter(page,limit)
+    response = RestClient.get @config["teratail"]["host"]+'tags'+ make_request_parameter(page,limit)
     JSON.parse response.to_s
   end
 
@@ -21,7 +22,7 @@ class TagService
   end
 
   def find_by_tag_name(tag_name,page=20,limit=1)
-    response = RestClient.get @config["teratail"]["host"]+'tags/'+tag_name+'/questions'+ApiClientHelper.make_request_parameter(page,limit)
+    response = RestClient.get @config["teratail"]["host"]+'tags/'+tag_name+'/questions'+make_request_parameter(page,limit)
     JSON.parse response.to_s
   end
 
