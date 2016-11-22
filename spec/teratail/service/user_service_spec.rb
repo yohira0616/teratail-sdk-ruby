@@ -1,5 +1,6 @@
 require 'rspec'
 require 'spec_helper'
+require 'yaml'
 
 RSpec.describe 'UserServiceTest' do
   config = YAML.load_file('./spec/test_config.yml')

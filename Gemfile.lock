@@ -1,3 +1,9 @@
+PATH
+  remote: .
+  specs:
+    teratail-sdk-ruby (0.1.0)
+      rest-client (~> 2.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -15,6 +21,7 @@ GEM
       ast (~> 2.2)
     powerpack (0.1.1)
     rainbow (2.1.0)
+    rake (10.4.2)
     rest-client (2.0.0)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
@@ -48,9 +55,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  rest-client
+  bundler (~> 1.13)
+  rake (~> 10.0)
   rspec
-  rubocop
+  rubocop (~> 0.45.0)
+  teratail-sdk-ruby!
 
 BUNDLED WITH
    1.13.6

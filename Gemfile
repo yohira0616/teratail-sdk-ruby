@@ -1,7 +1,11 @@
 # A sample Gemfile
 source "https://rubygems.org"
 
-# gem "rails"
-gem "rest-client"
-gem "rspec"
-gem "rubocop"
+gemspec
+
+group :test do
+  gem 'rspec'
+end
+
+# gem "rest-client"
+# gem "rubocop"
